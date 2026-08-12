@@ -1,0 +1,23 @@
+.header {
+  height: 70px;
+  padding: 0 40px;
+  border-bottom: 1px solid #e0e0e0;
+  background-color: rgb(178, 210, 244);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.consultation-button {
+  margin-left: 20px;
+}

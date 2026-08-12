@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
 import { MaterialModule } from './material-module';
+import { SharedModule } from './shared/shared-module';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { MaterialModule } from './material-module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MaterialModule
+    MaterialModule,
+    SharedModule
   ],
   providers: [
     provideBrowserGlobalErrorListeners()
