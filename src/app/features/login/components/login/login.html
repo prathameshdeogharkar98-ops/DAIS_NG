@@ -9,12 +9,12 @@
 
                             <mat-label class="icon-label">Customer ID</mat-label>
 
-                            <input formControlName="customerId" matInput type="text" class="w-100"
+                            <input formControlName="userName" matInput type="text" class="w-100"
                                 placeholder="Enter your Customer ID">
 
                             <mat-icon class="icon-label" matPrefix>person</mat-icon>
 
-                            <mat-error *ngIf="loginForm.get('customerId')?.hasError('required')">
+                            <mat-error *ngIf="loginForm.get('userName')?.hasError('required')">
                                 Custoemr ID is required
                             </mat-error>
 
@@ -56,7 +56,7 @@
                         </button>
                     </div>
                     <div class="col-md-6">
-                        <button type="button" class="btn w-100 button-color">
+                        <button type="button" (click)="clearForm()" class="btn w-100 button-color">
                             Clear
                         </button>
                     </div>

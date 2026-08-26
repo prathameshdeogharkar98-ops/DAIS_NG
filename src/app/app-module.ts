@@ -7,6 +7,7 @@ import { MaterialModule } from './material-module';
 import { SharedModule } from './shared/shared-module';
 import { LoginModule } from './features/login/login-module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { provideHttpClient } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,8 +21,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     LoginModule,
     ReactiveFormsModule
   ],
-  providers: [
-    provideBrowserGlobalErrorListeners()
+   providers: [
+    provideBrowserGlobalErrorListeners(),
+    provideHttpClient()
   ],
   bootstrap: [App]
 })

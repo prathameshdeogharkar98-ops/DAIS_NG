@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
+import { LoginService } from '../../sevices/login.service';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,7 @@ export class Login implements OnInit {
   inputType = "Password"
   loginForm!: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder,private loginService : LoginService) {
 
   }
 
@@ -21,7 +22,7 @@ export class Login implements OnInit {
 
     this.loginForm = this.fb.group({
 
-      customerId: ['', Validators.required],
+      userName: ['', Validators.required],
 
       password: ['', Validators.required]
 
@@ -29,12 +30,17 @@ export class Login implements OnInit {
   }
 
   passwordVisiblity() {
-    console.log("Value of passwordVisiblity", this.passwordVisiblity);
+    console.log("Value of passwordVisiblity", this.passwordVisible);
 
     this.passwordVisible = !this.passwordVisible
   }
 
-  login() {
+  clearForm(){
+    this.loginForm.reset()
+  }
 
+  login() {
+    console.log(this.loginForm.value["userName"],this.loginForm.value["password"]);
+    this.loginService.login(this.loginForm.value["userName"],this.loginForm.value["password"])
   }
 }
