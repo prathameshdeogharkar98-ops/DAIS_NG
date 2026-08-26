@@ -1,58 +1,69 @@
 <div class="login-container">
     <div class="login-background login-center">
-        <div class="login-card">
-            <!-- Login form -->
-            <div class="row">
-                <div class="col-md-11">
-                    <mat-form-field appearance="outline" class="full-width">
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+            <div class="login-card">
+                <!-- Login form -->
+                <div class="row">
+                    <div class="col-md-11">
+                        <mat-form-field appearance="outline" class="full-width">
 
-                        <mat-label class="icon-label">Customer ID</mat-label>
+                            <mat-label class="icon-label">Customer ID</mat-label>
 
-                        <input matInput type="text" class="w-100" placeholder="Enter your Customer ID">
+                            <input formControlName="customerId" matInput type="text" class="w-100"
+                                placeholder="Enter your Customer ID">
 
-                        <mat-icon class="icon-label" matPrefix>person</mat-icon>
+                            <mat-icon class="icon-label" matPrefix>person</mat-icon>
 
-                    </mat-form-field>
-                </div>
-            </div>
+                            <mat-error *ngIf="loginForm.get('customerId')?.hasError('required')">
+                                Custoemr ID is required
+                            </mat-error>
 
-            <div class="row">
-                <div class="col-md-11">
-                    <mat-form-field appearance="outline" class="full-width">
-
-                        <mat-label class="icon-label">Password</mat-label>
-
-                        <input matInput  [type]="passwordVisible ? 'password' : 'text'" class="w-100" placeholder="Enter your Password">
-
-                        <mat-icon class="icon-label" matPrefix>key</mat-icon>
-
-                    </mat-form-field>
-                </div>
-                <div class="col-md-1 p-3">
-                    <div class="" *ngIf="!passwordVisible">
-                        <mat-icon class="icon-label" matPrefix (click)="passwordVisiblity()">visibility</mat-icon>
+                        </mat-form-field>
                     </div>
-                    <div class=""  *ngIf="passwordVisible">
-                        <mat-icon class="icon-label" matPrefix (click)="passwordVisiblity()">visibility_off</mat-icon>
+                </div>
+
+                <div class="row pt-2">
+                    <div class="col-md-11">
+                        <mat-form-field appearance="outline" class="full-width">
+
+                            <mat-label class="icon-label">Password</mat-label>
+
+                            <input formControlName="password" matInput [type]="passwordVisible ? 'password' : 'text'"
+                                class="w-100" placeholder="Enter your Password">
+
+                            <mat-icon class="icon-label" matPrefix>key</mat-icon>
+                            <mat-error *ngIf="loginForm.get('password')?.hasError('required')">
+                                Password is required
+                            </mat-error>
+                        </mat-form-field>
                     </div>
-                    
+                    <div class="col-md-1 p-3">
+                        <div class="" *ngIf="!passwordVisible">
+                            <mat-icon class="icon-label" matPrefix (click)="passwordVisiblity()">visibility</mat-icon>
+                        </div>
+                        <div class="" *ngIf="passwordVisible">
+                            <mat-icon class="icon-label" matPrefix
+                                (click)="passwordVisiblity()">visibility_off</mat-icon>
+                        </div>
+
+                    </div>
                 </div>
+
+                <div class="row pt-2">
+                    <div class="col-md-6">
+                        <button type="submit" class="btn w-100 button-color">
+                            Login
+                        </button>
+                    </div>
+                    <div class="col-md-6">
+                        <button type="button" class="btn w-100 button-color">
+                            Clear
+                        </button>
+                    </div>
+
+                </div>
+
             </div>
-
-            <div class="row">
-                <div class="col-md-6">
-                    <button type="button" class="btn w-100 button-color">
-                        Login
-                    </button>
-                </div>
-                <div class="col-md-6">
-                    <button type="button" class="btn w-100 button-color">
-                        Clear
-                    </button>
-                </div>
-
-            </div>
-
-        </div>
+        </form>
     </div>
 </div>

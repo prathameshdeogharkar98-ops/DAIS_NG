@@ -6,6 +6,7 @@ import { App } from './app';
 import { MaterialModule } from './material-module';
 import { SharedModule } from './shared/shared-module';
 import { LoginModule } from './features/login/login-module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { LoginModule } from './features/login/login-module';
     AppRoutingModule,
     MaterialModule,
     SharedModule,
-    LoginModule
+    LoginModule,
+    ReactiveFormsModule
   ],
   providers: [
     provideBrowserGlobalErrorListeners()
