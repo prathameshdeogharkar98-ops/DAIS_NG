@@ -5,3 +5,38 @@
   box-sizing: border-box;
 }
 
+.login-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-card {
+  width: 800px;
+  padding: 24px;
+  box-sizing: border-box;
+  background-color: rgb(82, 74, 65, 0.6);
+  border-radius: 10px;
+
+}
+
+.login-card input {
+  color: white;
+}
+
+.login-card input::placeholder {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.full-width {
+  display: block;
+  width: 100%;
+}
+
+.icon-label {
+  color: aliceblue;
+}
+
+.button-color{
+  background-color: #f0e6e5;
+}
