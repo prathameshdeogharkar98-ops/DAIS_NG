@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
 import { MaterialModule } from './material-module';
 import { SharedModule } from './shared/shared-module';
+import { LoginModule } from './features/login/login-module';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { SharedModule } from './shared/shared-module';
     BrowserModule,
     AppRoutingModule,
     MaterialModule,
-    SharedModule
+    SharedModule,
+    LoginModule
   ],
   providers: [
     provideBrowserGlobalErrorListeners()
