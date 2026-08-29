@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Header } from './components/header/header';
 import { MaterialModule } from '../material-module';
 import { Footer } from './components/footer/footer';
+import { ToastrModule } from 'ngx-toastr';
 
 
 
@@ -13,7 +14,8 @@ import { Footer } from './components/footer/footer';
   ],
   imports: [
     CommonModule,
-    MaterialModule
+    MaterialModule,
+    ToastrModule.forRoot()
   ],
   exports: [Header, Footer]
 })

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { LoginService } from '../../sevices/login.service';
+import { Toast, ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,7 @@ export class Login implements OnInit {
   inputType = "Password"
   loginForm!: FormGroup;
 
-  constructor(private fb: FormBuilder,private loginService : LoginService) {
+  constructor(private fb: FormBuilder,private loginService : LoginService ) {
 
   }
 
@@ -27,6 +28,7 @@ export class Login implements OnInit {
       password: ['', Validators.required]
 
     });
+
   }
 
   passwordVisiblity() {
