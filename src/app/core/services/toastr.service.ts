@@ -15,4 +15,8 @@ export class ToasterService {
     this.toastr.success(msg, title);
   }
 
+  public toastError(msg: any, title: any) {
+    this.toastr.error(msg, title);
+  }
+
 }
