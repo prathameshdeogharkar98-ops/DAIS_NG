@@ -8,6 +8,7 @@ import { SharedModule } from './shared/shared-module';
 import { LoginModule } from './features/login/login-module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { provideHttpClient } from '@angular/common/http';
+import { DashboardModule } from './features/dashboard/dashboard-module';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { provideHttpClient } from '@angular/common/http';
     MaterialModule,
     SharedModule,
     LoginModule,
+    DashboardModule,
     ReactiveFormsModule
   ],
    providers: [

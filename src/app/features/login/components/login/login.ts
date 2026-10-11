@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { LoginService } from '../../sevices/login.service';
 import { Toast, ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +16,7 @@ export class Login implements OnInit {
   inputType = "Password"
   loginForm!: FormGroup;
 
-  constructor(private fb: FormBuilder,private loginService : LoginService ) {
+  constructor(private fb: FormBuilder,private loginService : LoginService, private router : Router ) {
 
   }
 
@@ -41,8 +42,16 @@ export class Login implements OnInit {
     this.loginForm.reset()
   }
 
-  login() {
+  async login() {
     console.log(this.loginForm.value["userName"],this.loginForm.value["password"]);
-    this.loginService.login(this.loginForm.value["userName"],this.loginForm.value["password"])
+    const response = await this.loginService.login(this.loginForm.value["userName"],this.loginForm.value["password"])
+    console.log("Login Response ",response);
+    if(response){
+      console.log("Goto Dashboard");
+      this.router.navigate(["dashboard"]);
+    }else{
+      console.log("Do Nothing");
+    }
+    
   }
 }

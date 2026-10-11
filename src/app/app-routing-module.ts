@@ -12,6 +12,12 @@ const routes: Routes = [
   {
     path: 'login',
     component: Login
+  },
+  {
+    path: 'dashboard',
+    loadChildren: () =>
+      import('./features/dashboard/dashboard-module')
+        .then(m => m.DashboardModule)
   }
 ];
 

@@ -11,6 +11,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatListModule } from '@angular/material/list';
 
 
 
@@ -25,7 +26,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     MatSidenavModule,
     MatMenuModule,
     MatSnackBarModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatListModule,
   ]
 })
 export class MaterialModule { }
