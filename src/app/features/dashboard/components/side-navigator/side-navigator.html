@@ -1,6 +1,4 @@
-
 <div class="app-layout">
-
   <mat-sidenav-container class="dashboard-container">
 
     <!-- Sidebar -->
@@ -56,7 +54,6 @@
     <!-- Main area -->
     <mat-sidenav-content class="dashboard-main">
 
-      <!-- Header -->
       <mat-toolbar class="dashboard-toolbar">
         <button
           mat-icon-button
@@ -77,99 +74,11 @@
         </button>
       </mat-toolbar>
 
-      <!-- Scrollable page content -->
+      <!-- All child pages render here -->
       <div class="dashboard-content">
-
-        <div class="page-container">
-
-          <!-- Page heading -->
-          <div class="page-header">
-            <div>
-              <h1>Dashboard Overview</h1>
-              <p>Welcome back! Here's your application summary.</p>
-            </div>
-          </div>
-
-          <!-- Summary cards -->
-          <div class="summary-grid">
-
-            <div class="summary-card">
-              <div class="card-icon blue">
-                <mat-icon>people</mat-icon>
-              </div>
-              <div>
-                <p>Total Users</p>
-                <h2>1,250</h2>
-              </div>
-            </div>
-
-            <div class="summary-card">
-              <div class="card-icon green">
-                <mat-icon>task_alt</mat-icon>
-              </div>
-              <div>
-                <p>Active Applications</p>
-                <h2>856</h2>
-              </div>
-            </div>
-
-            <div class="summary-card">
-              <div class="card-icon orange">
-                <mat-icon>pending_actions</mat-icon>
-              </div>
-              <div>
-                <p>Pending Requests</p>
-                <h2>42</h2>
-              </div>
-            </div>
-
-            <div class="summary-card">
-              <div class="card-icon purple">
-                <mat-icon>assessment</mat-icon>
-              </div>
-              <div>
-                <p>Reports</p>
-                <h2>128</h2>
-              </div>
-            </div>
-
-          </div>
-
-          <!-- Child component renders here -->
-          <section class="child-content">
-            <router-outlet></router-outlet>
-          </section>
-
-          <!-- Additional dashboard section -->
-          <div class="content-grid">
-
-            <section class="content-card">
-              <h3>Recent Activity</h3>
-              <p>Your recent application activities will appear here.</p>
-            </section>
-
-            <section class="content-card">
-              <h3>Quick Actions</h3>
-
-              <div class="quick-actions">
-                <button mat-stroked-button routerLink="/dashboard/users">
-                  <mat-icon>person_add</mat-icon>
-                  Manage Users
-                </button>
-
-                <button mat-stroked-button routerLink="/dashboard/reports">
-                  <mat-icon>description</mat-icon>
-                  View Reports
-                </button>
-              </div>
-            </section>
-
-          </div>
-
-        </div>
+        <router-outlet></router-outlet>
       </div>
 
     </mat-sidenav-content>
   </mat-sidenav-container>
-
 </div>

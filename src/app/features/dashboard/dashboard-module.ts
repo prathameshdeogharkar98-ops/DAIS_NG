@@ -5,11 +5,13 @@ import { DashboardRoutingModule } from './dashboard-routing-module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from '../../material-module';
 import { SideNavigator } from './components/side-navigator/side-navigator';
+import { Home } from './components/home/home';
 
 
 @NgModule({
   declarations: [
-    SideNavigator
+    SideNavigator,
+    Home
   ],
   imports: [
     CommonModule,
@@ -18,7 +20,8 @@ import { SideNavigator } from './components/side-navigator/side-navigator';
     ReactiveFormsModule
   ],
   exports: [
-    SideNavigator
+    SideNavigator,
+    Home
   ]
 })
 export class DashboardModule { }
